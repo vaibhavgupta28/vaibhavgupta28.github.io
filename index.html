@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0031)https://jamescun.github.io/iPG/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="gr__jamescun_github_io"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Voix</title>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<script async="" src="/analytics.js"></script><script type="text/javascript" src="jquery.js"></script><style>@media print {#ghostery-purple-box {display:none !important}}</style>
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="functions.js"></script>
+<script type="text/javascript">
+var timer = 30;
+var QuestionList = [];
+var counter = 0;
+var QuestionTime = [];
+var AnswerTime = [];
+
+var myArray = [q1,q2,q3,q4,q5,q6,q7,q8];
+
+var q = myArray[Math.floor(Math.random()*myArray.length)];
+
+
+// Randomise Questions & Tips
+//q.sort(function() {return 0.5 - Math.random()})
+//tips.sort(function() {return 0.5 - Math.random()})
+
+
+// End Questions
+q.push('done');
+
+
+$(document).ready(function(){
+	next_q();
+	timer_tick();
+	display_tip();
+});
+
+
+
+$(document).keypress(function(e) {
+
+	switch (e.which)
+	{
+		case 13:
+			// Next Question - Return (13)
+			next_q();
+			break;
+		
+		case 32:
+			// Restart Timer - Space (32)
+			timer_restart();
+			break;
+		
+		case 110:
+			// Doesn't Do Anything, Move Along
+			$('body').append('<div class="egg"><iframe width="420" height="315" src="http://www.youtube.com/embed/QH2-TGUlwu4?autoplay=1" frameborder="0" allowfullscreen></iframe></div>');
+			break;
+			
+	}
+});
+</script>
+
+</head>
+<body data-gr-c-s-loaded="true">
+
+<!-- Message to be Displayed when out of questions -->
+<div id="end" class="hide">
+	<h1>You have reached the end of questions</h1>
+	<h2>Hopefully you will be a little more ready for your YC interview, good luck! :)</h2>
+	
+	<p>Why not check out <a href="http://goscale.com/">GoScale</a>, it's cloud computing that scales in milliseconds.</p>
+</div>
+
+
+<!-- Question Display --->
+<div id="question">Speaking</div>
+
+
+<!-- Timer -->
+<div id="timer" class="hide fail">-9 s</div>
+
+
+<!-- Dissapointed Paul Graham -->
+<div class="pg">
+	<img src="pg.jpg" width="400" height="300">
+</div>
+
+<!-- Tips Display -->
+<div id="results" style="text-align: right;margin: auto;width: 69%;padding: 10px;">
+	<table id="resulttable"></table>
+</div>
+
+
+<!-- Tips Display -->
+<div class="tip">
+	<strong>ProTip:</strong> <span id="tip">When talking to PG and the other YC partners, be substantive, and get straight to the point.</span>
+</div>
+
+
+<!-- Keyboard Control Reference -->
+<div class="controls">
+	<h1>Key Controls</h1>
+	
+	<div class="key key-space">space</div>
+	<div class="act">to restart timer</div>
+	
+	<div class="key key-return">return</div>
+	<div class="act">to next question</div>
+</div>
+
+
+<!-- Footer -->
+<div class="footer">
+	Built by
+	<a href="http://jamescun.com/">James Cunningham</a> and
+	<a href="http://entrevate.com/">Colin Hayhurst</a> for 
+	<a href="http://stackblaze.com/">StackBlaze</a>'s YC S12 Interview
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6461723-15', 'jamescun.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</body></html>
