@@ -33,7 +33,6 @@ function next_q()
 				$('#question').html(question);
     		}
     		qs = getUrlVars()["speak"];  
-			alert(qs);
 			if(qs != "no") 
     		{
 				var msg = new SpeechSynthesisUtterance(question);
