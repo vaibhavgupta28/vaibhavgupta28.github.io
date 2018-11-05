@@ -18,6 +18,13 @@ a:hover {color: #336699; text-decoration: underline;}
 	line-height: 84px;
 }
 
+#links {
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+	display: block;
+}
+
 #speaker {
 	text-align: center;
 	width: 250px;

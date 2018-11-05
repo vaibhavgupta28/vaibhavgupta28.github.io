@@ -58,10 +58,26 @@ $(document).keypress(function(e) {
 			
 	}
 });
+
+$("#question").on("swipeleft",function(){
+  timer_restart();
+});
+
+$("#question").on("swiperight",function(){
+	next_q();
+});
+
 </script>
 
 </head>
 <body data-gr-c-s-loaded="true">
+
+<div style="text-align: center;">
+	<a href="?question=no&speak=yes"> -> Only listen to the questions</a>
+	<a href="?question=yes&speak=no"> -> Only Read the questions</a>
+	<a href="?question=yes"> -> Listen and Read the questions</a>
+</div>
+
 
 <!-- Message to be Displayed when out of questions -->
 <div id="end" class="hide">
@@ -73,11 +89,6 @@ $(document).keypress(function(e) {
 
 
 <!-- Question Display --->
-<div>
-	<a href="?question=no&speak=yes" style="padding:10px">Only listen to the questions</a>
-	<a href="?question=yes&speak=no" style="padding:10px">Only Read the questions</a>
-	<a href="?question=yes" style="padding:10px">Listen and Read the questions</a>
-</div>
 <div id="question">
 	<div>Speaking</div>
 		<img src="michael.gif" style="width:350px">
