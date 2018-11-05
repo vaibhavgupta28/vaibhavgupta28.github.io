@@ -18,6 +18,19 @@ a:hover {color: #336699; text-decoration: underline;}
 	line-height: 84px;
 }
 
+.blinking{
+    animation:blinkingText 2s infinite;
+    margin: 100px 0; text-align: center;
+    font-size: 24px; font-weight: bold;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: red; }
+    50%{    color: transparent; }
+    99%{    color:#000;  }
+    100%{   color: #000;    }
+}
+
 #links {
 	margin: auto;
 	padding: 10px;

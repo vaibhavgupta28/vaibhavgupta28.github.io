@@ -30,8 +30,7 @@ function next_q()
     		var qs = getUrlVars()["question"];  
 			if(qs == "yes") 
     		{
-				$('#question').html(question + 
-					'<div onclick="next_q()" style="color:red">Next</div>');
+				$('#question').html('<div onclick="next_q()">'+question+'</div>');
     		}
     		qs = getUrlVars()["speak"];  
 			if(qs != "no") 
