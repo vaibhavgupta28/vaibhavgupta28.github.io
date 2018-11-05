@@ -1,12 +1,15 @@
 /* --- Question Functions ---
    -------------------------------------------------- */
-$.urlParam = function(name){
-    var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
-    if (results==null){
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    if (vars==null){
        return null;
     }
     else{
-       return results[1] || 0;
+       return vars;
     }
 }
 
@@ -24,14 +27,19 @@ function next_q()
 		{
 			QuestionList[counter] = question;
     		
-    		var qs = $.urlParam('question');  
+    		var qs = getUrlVars()["question"];  
 			if(qs != null) 
     		{
 				$('#question').html(question);
     		}
-			var msg = new SpeechSynthesisUtterance(question);
-			window.speechSynthesis.speak(msg);
-			
+    		qs = getUrlVars()["speak"];  
+			alert(qs);
+			if(qs != "no") 
+    		{
+				var msg = new SpeechSynthesisUtterance(question);
+				window.speechSynthesis.speak(msg);
+    		}
+
 			timer_restart();
 			display_tip();
 		} else

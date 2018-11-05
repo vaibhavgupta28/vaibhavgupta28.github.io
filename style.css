@@ -17,6 +17,13 @@ a:hover {color: #336699; text-decoration: underline;}
 	text-align: center;
 	line-height: 84px;
 }
+
+#speaker {
+	text-align: center;
+	width: 250px;
+	height: 250px;
+}
+
 #timer {
 	width: 120px;
 	margin: 0 auto 50px auto; padding: 4px 0;
@@ -66,7 +73,6 @@ a:hover {color: #336699; text-decoration: underline;}
 	text-align: right;
 	margin: auto;
 	width: 69%;
-	border: 3px solid green;
 	padding: 10px;
 }
 
