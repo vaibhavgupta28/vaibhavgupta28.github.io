@@ -28,7 +28,7 @@ function next_q()
 			QuestionList[counter] = question;
     		
     		var qs = getUrlVars()["question"];  
-			if(qs != null) 
+			if(qs == "yes") 
     		{
 				$('#question').html(question);
     		}
